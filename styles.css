@@ -1,0 +1,163 @@
+/* 1. Reset and Basic Setup */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Playfair Display', serif;
+  color: #1a1a1a;
+  background-color: #f9fafb; /* Light grey for the top/bottom sections */
+}
+
+/* 2. The Macro Layout (2 Columns) */
+.page-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* 3. Left Column: Sidebar */
+.sidebar {
+  width: 40%;
+  background-image: url('back.jpg');  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logo-banner {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+    width: 100px; /* or 5rem, 10%, etc. */
+    height: auto; /* keeps the aspect ratio */
+}    
+
+.logo-text {
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+}
+
+.photo-credit {
+  position: absolute;
+  bottom: 1rem;
+  width: 100%;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.75rem;
+}
+
+/* 4. Right Column: Main Content */
+.main-content {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 5. The Three Vertical Sections */
+.intro-section {
+  padding: 3rem 4rem;
+  /* This takes up available space to push the form down */
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+  max-width: 700px;
+}
+
+/* THIS IS THE WHITE HORIZONTAL RECTANGLE */
+.form-section {
+  background-color: white;
+  padding: 2rem 4rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* Subtle shadow to separate it from the grey */
+}
+
+.form-section h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+/* 6. The Form Grid (2 columns of inputs) */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 1.5rem;
+  max-width: 700px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-size: 0.75rem;
+  letter-spacing: 0.05rem;
+  font-weight: 600;
+  color: #4b5563;
+  margin-bottom: 0.25rem;
+}
+
+.input-group input {
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+/* Focus state (Blue border like the last name field) */
+.input-group input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px #2563eb;
+}
+
+/* Error state (Red border like the password fields) */
+.input-group input.error-input {
+  border-color: #dc2626;
+}
+
+/* 7. Bottom Section */
+.cta-section {
+  padding: 2rem 4rem;
+  flex: 1; /* Takes up remaining space at the bottom */
+}
+
+.cta-section button {
+  background-color: rgb(81, 0, 255); 
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.cta-section p {
+  font-size: 1rem;
+}
+
+.cta-section a {
+  color: rgb(81, 0, 255);
+  font-weight: bold;
+  text-decoration: none;
+}
